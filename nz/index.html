@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>重庆中职生综合素质评价内置浏览器版</title>
     <style>
-        body {
+                body {
             display: flex;
             flex-direction: column;
             height: 100vh;
@@ -52,23 +52,101 @@
             font-size: 0.8rem;
             color: #777;
         }
+        /* 添加弹窗的样式 */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* 背景遮罩 */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+            text-align: center;
+            border-radius: 10px;
+            animation: slideIn 0.5s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .close:hover,
+        .close:focus {
+            color: #f00;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #confirmButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #confirmButton:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
-<body>
+<body onload="loadAndShowAnnouncement()">
     <div class="container">
         <div id="horizontal-scroll-announcement" class="horizontal-scroll-announcement"></div>
         <div class="browser">
             <iframe src="http://221.178.107.3/#/studentPage/studentIndex" frameborder="0"></iframe>
         </div>
         <div class="copyright">© 2024-2026 隼目安全 版权所有</div>
+        <!-- 弹窗公告栏 -->
+        <div id="myModal" class="modal" onclick="closeModal(event)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p id="modalAnnouncement"></p>
+                <button id="confirmButton" onclick="closeModal()">知道了</button>
+            </div>
+        </div>
     </div>
     <script>
-        // 模拟读取公告内容
-        const announcementContent = `
-            本平台为内置浏览器，如有问题请联系:xuan8ai666@gmail.com
-        `;
-        const announcement = document.getElementById('horizontal-scroll-announcement');
-        announcement.innerHTML = announcementContent.split('\n').map((line, index) => `<span>${line}</span>`).join('');
+        function loadAndShowAnnouncement() {
+            fetch('/gonggao.txt')
+                .then(response => response.text())
+                .then(data => {
+                    if (data.trim() !== '') { // 检查数据是否为空
+                        document.getElementById('modalAnnouncement').innerText = data;
+                        document.getElementById('myModal').style.display = 'block';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function closeModal(event) {
+            if (event) {
+                event.stopPropagation(); // 阻止事件冒泡
+            }
+            document.getElementById('myModal').style.display = 'none';
+        }
     </script>
 </body>
 </html>
