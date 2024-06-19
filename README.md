@@ -7,3 +7,4 @@
  ---- | ----- | ------  
 <img src="https://avatars.githubusercontent.com/u/173129827?s=96&v=4" />| xuan8ai | 暂无
 <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2137089783" />| 双面 | 暂无
+<img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2435863198" />| 廖聪 | 暂无
