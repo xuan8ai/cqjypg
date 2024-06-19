@@ -18,6 +18,8 @@
 
 [内置浏览器安卓版](https://xuan8ai.github.io/cqjypg/nz/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
 
+加入我们或有问题请联系:xuan8ai@gmail.com
+
 ## 贡献者
 
 贡献者  | 昵称  | 贡献内容
