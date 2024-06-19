@@ -21,6 +21,14 @@
             </div>
         </div>
     </div>
+    <script>
+        // 模拟读取公告内容
+        const announcementContent = `
+            本平台为内置浏览器，如有问题请联系:xuan8ai666@gmail.com
+        `;
+        const announcement = document.getElementById('horizontal-scroll-announcement');
+        announcement.innerHTML = announcementContent.split('\n').map((line, index) => `<span>${line}</span>`).join('');
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>
