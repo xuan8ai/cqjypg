@@ -2,24 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI 文字搜索项目</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业技术学习情况</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f2;
+        }
+        .dropdown-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        textarea {
+            width: 100%;
+            max-width: 600px;
+            height: 200px;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            resize: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>AI 文字搜索项目</h1>
-        <div class="search-area">
-            <select id="searchOptions">
-                <option value="">--请选择搜索选项--</option>
-                <option value="option1">帮我写十篇以老师视角的学生网络安全专业学习情况表现说明</option>
-                <option value="option2">帮我写十篇以老师视角的学生数字影像专业学习情况表现说明</option>
-                <option value="option3">帮我写十篇以老师视角的学生机电专业学习情况表现说明</option>
-            </select>
-            <button id="searchBtn">搜索</button>
-        </div>
-        <div id="outputContent"></div>
+    <div class="title">选择专业</div>
+    <div class="dropdown-container">
+        <select id="courseSelect">
+            <option value="">--请选择专业--</option>
+            <option value="帮我写十份以老师视角的学生机电技术应用专业技术学习情况内容">机电技术应用</option>
+            <option value="帮我写十份以老师视角的学生3D打印专业技术学习情况内容">增材</option>
+            <option value="帮我写十份以老师视角的学生园艺技术专业技术学习情况内容">园艺技术</option>
+            <option value="帮我写十份以老师视角的学生康养休闲旅游专业技术学习情况内容">康养休闲旅游</option>
+            <option value="帮我写十份以老师视角的学生网络安全专业技术学习情况内容">网络安全</option>
+        </select>
+        <button id="fetchButton">获取内容</button>
     </div>
-    <script src="main.js"></script>
+    <textarea id="contentTextarea" readonly placeholder="内容将显示在这里..."></textarea>
+
+    <script>
+        document.getElementById('fetchButton').addEventListener('click', function() {
+            var selectedCourse = document.getElementById('courseSelect').value;
+            if (selectedCourse) {
+                fetch(`http://ovoa.cc/api/Bing.php?msg=${encodeURIComponent(selectedCourse)}&model=down&type=json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('contentTextarea').value = data.content;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        document.getElementById('contentTextarea').value = '内容加载失败，请重试。';
+                    });
+            } else {
+                document.getElementById('contentTextarea').value = '请先选择课程。';
+            }
+        });
+    </script>
 </body>
 </html>
