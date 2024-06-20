@@ -23,7 +23,7 @@
 
 [内置浏览器安卓版1](https://www.123pan.com/s/mmgYjv-x7d63.html)
 
-[内置浏览器安卓版2](https://xuan8ai.github.io/cqjypg/nz/)
+[内置浏览器安卓版2](https://xuan8ai.github.io/cqjypg/nz/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
 
 加入我们或有问题请联系:xuan8ai@gmail.com
 
