@@ -4,6 +4,8 @@
 
 [AI文字搜索 直链](https://xuan8ai.github.io/cqjypg/AI/wenziai.html)
 
+注意:搜索出的内容不符时，再次点击搜索按钮即可
+
 加入我们或有问题请联系:xuan8ai@gmail.com
 
 ## 贡献者
