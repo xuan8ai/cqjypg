@@ -3,48 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cross-Domain Iframe with Announcement Modal</title>
+    <title>Cross-Domain Iframe with Full Screen and Announcement</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
+        /* 第一段代码的样式 */
+        body, html {
             margin: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 100%;
-            max-width: 960px;
-            padding: 1rem;
-            margin: auto;
-        }
-        .browser {
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 0;
+            height: 100%;
             overflow: hidden;
-            margin-bottom: 1rem;
         }
-        .browser iframe {
+        #full-screen-iframe {
             width: 100%;
-            height: 500px; /* 可以根据需要调整高度 */
+            height: 100%;
             border: none;
         }
-        .horizontal-scroll-announcement {
-            white-space: nowrap;
-            overflow: auto;
-            background-color: #007bff;
-            color: #fff;
-            padding: 0.5rem;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        .copyright {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #777;
-        }
-        /* 弹窗样式 */
+        /* 第二段代码的样式 */
         .modal {
             display: none;
             position: fixed;
@@ -73,47 +46,38 @@
             font-weight: bold;
             cursor: pointer;
         }
-        #confirmButton {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 公告横幅 -->
-        <div id="horizontal-scroll-announcement" class="horizontal-scroll-announcement">
-            这里是公告内容，可以放置你的公告信息。
-        </div>
-        <!-- 内置浏览器 -->
-        <div class="browser">
-            <iframe src="http://example.com" frameborder="0"></iframe> <!-- 替换成你的跨域URL -->
-        </div>
-        <!-- 版权信息 -->
-        <div class="copyright">&copy; 2023 Your Company</div>
-        <!-- 公告模态框 -->
-        <div id="myModal" class="modal" onclick="closeModal()">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <p id="modalAnnouncement">这里是模态框中的公告内容。</p>
-                <button id="confirmButton" onclick="confirmAction()">确认</button>
-            </div>
+    <!-- 第一段代码的<iframe> -->
+    <iframe id="full-screen-iframe" src="http://example.com"></iframe> <!-- 替换成你的跨域URL -->
+
+    <!-- 公告模态框 -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalAnnouncement">加载中...</p>
         </div>
     </div>
 
     <script>
+        // 第一段代码的全屏函数
+        function requestFullscreen(element) {
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullscreen) {
+                element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) {
+                element.msRequestFullscreen();
+            }
+        }
+
         // 显示模态框的函数
-        function showModal() {
+        function showModal(content) {
             document.getElementById('myModal').style.display = 'block';
+            document.getElementById('modalAnnouncement').textContent = content;
         }
 
         // 关闭模态框的函数
@@ -121,14 +85,24 @@
             document.getElementById('myModal').style.display = 'none';
         }
 
-        // 用户点击确认按钮后的操作
-        function confirmAction() {
-            alert('您已经确认了公告信息。');
-            closeModal();
+        // 读取文件内容并显示在弹窗中的函数
+        function readAnnouncement() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    showModal(xhr.responseText);
+                }
+            };
+            xhr.open('GET', 'gonggao.txt', true); // 假设gonggao.txt位于网站的根目录下
+            xhr.send();
         }
 
-        // 页面加载完毕后立即显示模态框
-        window.onload = showModal;
+        // 当页面加载完成时，立即请求全屏并读取公告
+        window.onload = function() {
+            var iframe = document.getElementById('full-screen-iframe');
+            requestFullscreen(iframe);
+            readAnnouncement();
+        };
     </script>
 </body>
 </html>
