@@ -1,9 +1,4 @@
-// 页面加载完成后自动填充搜索框
-window.onload = function() {
-    document.getElementById('searchBox').value = '帮我写十篇以老师视角的学生网络安全专业学习情况表现说明';
-};
 
-document.getElementById('searchBtn').addEventListener('click', function() {
     // 显示提示消息
     alert('已搜索，请等待数秒。');
 
