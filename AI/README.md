@@ -2,7 +2,9 @@
 
 主要用于帮助同学们生成"重庆中职生综合素质评价管理系统"中的"专业技术学习情况"的学生评价内容生成，也可以进行其他提问，由于没有太大的必要性，就不做APP端了，直接附上访问链接
 
-[AI文字搜索 直链](https://xuan8ai.github.io/cqjypg/AI/wenziai.html)
+[AI文字搜索 安卓链接](https://xuan8ai.github.io/cqjypg/AI/wenziai.html)
+
+[AI文字搜索 苹果链接](http://xuanbai.tb66.fun/AI/)
 
 注意:搜索出的内容不符时，再次点击搜索按钮即可;在点击搜索后需等待数秒
 
