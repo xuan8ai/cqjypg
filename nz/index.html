@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cross-Domain Iframe with Full Screen and Announcement</title>
+    <title>重庆中职生综合素质评价内置浏览器版</title>
     <style>
-        /* 第一段代码的样式 */
-        body, html {
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            height: 100%;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            max-width: 960px;
+            padding: 1rem;
+        }
+        .browser {
+            border: 1px solid #ccc;
+            border-radius: 4px;
             overflow: hidden;
         }
-        #full-screen-iframe {
+        .browser iframe {
             width: 100%;
-            height: 100%;
+            height: calc(100vh - 100px);
             border: none;
         }
-        /* 第二段代码的样式 */
+        .horizontal-scroll-announcement {
+            white-space: nowrap;
+            overflow: auto;
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5rem;
+            font-size: 1rem;
+            position: relative;
+            top: 0;
+            z-index: 1;
+        }
+        .horizontal-scroll-announcement span {
+            display: inline-block;
+            padding-right: 100%;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .copyright {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
         .modal {
             display: none;
             position: fixed;
@@ -36,73 +70,92 @@
             border: 1px solid #888;
             width: 80%;
             max-width: 600px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
             text-align: center;
-            border-radius: 5px;
+            border-radius: 10px;
+            animation: slideIn 0.5s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .close:hover,
+        .close:focus {
+            color: #f00;
+            text-decoration: none;
             cursor: pointer;
+        }
+        #confirmButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #confirmButton:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
-<body>
-    <!-- 第一段代码的<iframe> -->
-    <iframe id="full-screen-iframe" src="http://example.com"></iframe> <!-- 替换成你的跨域URL -->
-
-    <!-- 公告模态框 -->
-    <div id="myModal" class="modal" onclick="closeModal()">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p id="modalAnnouncement">加载中...</p>
+<body onload="loadAndShowAnnouncement()">
+    <div class="container">
+        <div id="horizontal-scroll-announcement" class="horizontal-scroll-announcement"></div>
+        <div class="browser">
+            <iframe src="http://221.178.107.3/#/studentPage/studentIndex" frameborder="0"></iframe>
+        </div>
+        <div class="copyright">© 2024-2026 隼目安全 版权所有</div>
+        <!-- 弹窗公告栏 -->
+        <div id="myModal" class="modal" onclick="closeModal(event)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p id="modalAnnouncement"></p>
+                <button id="confirmButton" onclick="closeModal()">知道了</button>
+            </div>
         </div>
     </div>
-
     <script>
-        // 第一段代码的全屏函数
-        function requestFullscreen(element) {
-            if (element.requestFullscreen) {
-                element.requestFullscreen();
-            } else if (element.mozRequestFullScreen) {
-                element.mozRequestFullScreen();
-            } else if (element.webkitRequestFullscreen) {
-                element.webkitRequestFullscreen();
-            } else if (element.msRequestFullscreen) {
-                element.msRequestFullscreen();
+        function loadAndShowAnnouncement() {
+            fetch('https://xuan8ai.github.io/cqjypg/nz/gonggao.txt') // 请将此URL替换为你的服务器地址
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    if (data.trim() !== '') { // 检查数据是否为空
+                        document.getElementById('modalAnnouncement').innerText = data;
+                        document.getElementById('myModal').style.display = 'block';
+                    } else {
+                        console.log('Announcement is empty.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading announcement:', error);
+                    // 可以在这里添加错误处理，例如显示一个默认的公告内容
+                });
+        }
+
+        function closeModal(event) {
+            if (event) {
+                event.stopPropagation(); // 阻止事件冒泡
             }
-        }
-
-        // 显示模态框的函数
-        function showModal(content) {
-            document.getElementById('myModal').style.display = 'block';
-            document.getElementById('modalAnnouncement').textContent = content;
-        }
-
-        // 关闭模态框的函数
-        function closeModal() {
             document.getElementById('myModal').style.display = 'none';
         }
-
-        // 读取文件内容并显示在弹窗中的函数
-        function readAnnouncement() {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    showModal(xhr.responseText);
-                }
-            };
-            xhr.open('GET', 'gonggao.txt', true); // 假设gonggao.txt位于网站的根目录下
-            xhr.send();
-        }
-
-        // 当页面加载完成时，立即请求全屏并读取公告
-        window.onload = function() {
-            var iframe = document.getElementById('full-screen-iframe');
-            requestFullscreen(iframe);
-            readAnnouncement();
-        };
     </script>
 </body>
 </html>
