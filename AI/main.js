@@ -1,4 +1,6 @@
-
+document.getElementById('searchBtn').addEventListener('click', function() {
+    // 取消自动填充
+    // document.getElementById('searchBox').value = ''
     // 显示提示消息
     alert('已搜索，请等待数秒。');
 
