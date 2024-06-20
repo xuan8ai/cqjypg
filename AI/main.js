@@ -6,7 +6,11 @@ window.onload = function() {
 document.getElementById('searchBtn').addEventListener('click', function() {
     // 显示提示消息
     alert('已搜索，请等待数秒。');
-    
+
+    // 清空之前的输出
+    var outputContent = document.getElementById('outputContent');
+    outputContent.innerHTML = '';
+
     var searchBox = document.getElementById('searchBox');
     var searchQuery = searchBox.value;
     var apiUrl = 'http://ovoa.cc/api/Bing.php?msg=' + encodeURIComponent(searchQuery) + '&model=down&type=json';
