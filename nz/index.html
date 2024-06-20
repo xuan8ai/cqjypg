@@ -3,55 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>重庆中职生综合素质评价内置浏览器版</title>
+    
     <style>
         body {
-            display: -ms-flexbox;
             display: flex;
-            -ms-flex-direction: column;
             flex-direction: column;
             height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
         }
-        .container {
-            width: 100%;
-            max-width: 960px;
-            padding: 1rem;
-        }
-        .browser {
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .browser iframe {
-            width: 100%;
-            height: calc(100vh - 100px);
-            border: none;
-        }
         .horizontal-scroll-announcement {
             white-space: nowrap;
-            overflow: auto;
+            overflow: hidden;
             background-color: #007bff;
             color: #fff;
             padding: 0.5rem;
             font-size: 1rem;
-            position: relative;
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 1;
+            z-index: 2; 
         }
         .horizontal-scroll-announcement span {
             display: inline-block;
             padding-right: 100%;
-            -ms-animation: scroll 10s linear infinite;
             animation: scroll 10s linear infinite;
         }
-        @-ms-keyframes scroll {
-            0% { -ms-transform: translateX(0); }
-            100% { -ms-transform: translateX(-100%); }
-        }
         @keyframes scroll {
-            0% { transform: translateX(0); }
+            0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            width: 100%;
+            margin-top: 2rem; 
+        }
+        .browser {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .browser iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
         }
         .copyright {
             margin-top: 1rem;
@@ -62,7 +60,7 @@
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 3; 
             left: 0;
             top: 0;
             width: 100%;
@@ -80,12 +78,7 @@
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
             text-align: center;
             border-radius: 10px;
-            -ms-animation: slideIn 0.5s ease;
             animation: slideIn 0.5s ease;
-        }
-        @-ms-keyframes slideIn {
-            from { -ms-transform: translateY(-100%); opacity: 0; }
-            to { -ms-transform: translateY(0); opacity: 1; }
         }
         @keyframes slideIn {
             from { transform: translateY(-100%); opacity: 0; }
@@ -96,7 +89,6 @@
             float: right;
             font-size: 28px;
             font-weight: bold;
-            -ms-transition: color 0.3s ease;
             transition: color 0.3s ease;
         }
         .close:hover,
@@ -115,7 +107,6 @@
             display: inline-block;
             font-size: 16px;
             margin: 4px 2px;
-            -ms-transition: background-color 0.3s ease;
             transition: background-color 0.3s ease;
             cursor: pointer;
             border-radius: 5px;
@@ -126,24 +117,26 @@
     </style>
 </head>
 <body onload="loadAndShowAnnouncement()">
+    <div class="horizontal-scroll-announcement">
+        <span>这是一个滚动的公告信息...</span>
+    </div>
     <div class="container">
-        <div id="horizontal-scroll-announcement" class="horizontal-scroll-announcement"></div>
         <div class="browser">
-            <iframe src="http://221.178.107.3/#/studentPage/studentIndex" frameborder="0"></iframe>
+            <iframe src="http://221.178.107.3/#/headmasterPage/headmasterIndex"></iframe>
         </div>
         <div class="copyright">© 2024-2026 隼目安全 版权所有</div>
-        <!-- 弹窗公告栏 -->
-        <div id="myModal" class="modal" onclick="closeModal(event)">
-            <div class="modal-content" onclick="event.stopPropagation()">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <p id="modalAnnouncement"></p>
-                <button id="confirmButton" onclick="closeModal()">知道了</button>
-            </div>
+    </div>
+    <!-- 弹窗公告栏 -->
+    <div id="myModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalAnnouncement"></p>
+            <button id="confirmButton" onclick="closeModal()">知道了</button>
         </div>
     </div>
     <script>
         function loadAndShowAnnouncement() {
-            fetch('https://xuan8ai.github.io/cqjypg/nz/gonggao.txt') // 请将此URL替换为你的服务器地址
+            fetch('https://xuan8ai.github.io/cqjypg/nz/gonggao.txt') 
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -151,7 +144,7 @@
                     return response.text();
                 })
                 .then(data => {
-                    if (data.trim() !== '') { // 检查数据是否为空
+                    if (data.trim() !== '') { 
                         document.getElementById('modalAnnouncement').innerText = data;
                         document.getElementById('myModal').style.display = 'block';
                     } else {
@@ -160,13 +153,13 @@
                 })
                 .catch(error => {
                     console.error('Error loading announcement:', error);
-                    // 可以在这里添加错误处理，例如显示一个默认的公告内容
+                  
                 });
         }
 
         function closeModal(event) {
             if (event) {
-                event.stopPropagation(); // 阻止事件冒泡
+                event.stopPropagation();
             }
             document.getElementById('myModal').style.display = 'none';
         }
