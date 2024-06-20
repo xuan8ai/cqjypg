@@ -5,7 +5,9 @@
     <title>重庆中职生综合素质评价内置浏览器版</title>
     <style>
         body {
+            display: -ms-flexbox;
             display: flex;
+            -ms-flex-direction: column;
             flex-direction: column;
             height: 100vh;
             margin: 0;
@@ -40,7 +42,12 @@
         .horizontal-scroll-announcement span {
             display: inline-block;
             padding-right: 100%;
+            -ms-animation: scroll 10s linear infinite;
             animation: scroll 10s linear infinite;
+        }
+        @-ms-keyframes scroll {
+            0% { -ms-transform: translateX(0); }
+            100% { -ms-transform: translateX(-100%); }
         }
         @keyframes scroll {
             0% { transform: translateX(0); }
@@ -73,7 +80,12 @@
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
             text-align: center;
             border-radius: 10px;
+            -ms-animation: slideIn 0.5s ease;
             animation: slideIn 0.5s ease;
+        }
+        @-ms-keyframes slideIn {
+            from { -ms-transform: translateY(-100%); opacity: 0; }
+            to { -ms-transform: translateY(0); opacity: 1; }
         }
         @keyframes slideIn {
             from { transform: translateY(-100%); opacity: 0; }
@@ -84,6 +96,7 @@
             float: right;
             font-size: 28px;
             font-weight: bold;
+            -ms-transition: color 0.3s ease;
             transition: color 0.3s ease;
         }
         .close:hover,
@@ -102,6 +115,7 @@
             display: inline-block;
             font-size: 16px;
             margin: 4px 2px;
+            -ms-transition: background-color 0.3s ease;
             transition: background-color 0.3s ease;
             cursor: pointer;
             border-radius: 5px;
@@ -115,7 +129,7 @@
     <div class="container">
         <div id="horizontal-scroll-announcement" class="horizontal-scroll-announcement"></div>
         <div class="browser">
-            <iframe src="http://221.178.107.3/#/studentPage/studentIndex" frameborder="0"></iframe>
+            <iframe src="http://221.178.107.3/#/headmasterPage/headmasterIndex" frameborder="0"></iframe>
         </div>
         <div class="copyright">© 2024-2026 隼目安全 版权所有</div>
         <!-- 弹窗公告栏 -->
