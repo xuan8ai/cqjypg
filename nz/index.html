@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>重庆中职生综合素质评价内置浏览器版</title>
-    
     <style>
         body {
             display: flex;
@@ -122,7 +121,7 @@
     </div>
     <div class="container">
         <div class="browser">
-            <iframe src="http://221.178.107.3/#/studentPage/studentIndex"></iframe>
+            <iframe id="iframe-content" src="about:blank"></iframe>
         </div>
         <div class="copyright">© 2024-2026 隼目安全 版权所有</div>
     </div>
@@ -153,7 +152,6 @@
                 })
                 .catch(error => {
                     console.error('Error loading announcement:', error);
-                  
                 });
         }
 
@@ -162,6 +160,14 @@
                 event.stopPropagation();
             }
             document.getElementById('myModal').style.display = 'none';
+        }
+
+        window.onload = function() {
+            var iframe = document.getElementById('iframe-content');
+            iframe.src = 'http://221.178.107.3/#/headmasterPage/headmasterIndex';
+            iframe.onload = function() {
+                console.log('iframe loaded successfully');
+            }
         }
     </script>
 </body>
