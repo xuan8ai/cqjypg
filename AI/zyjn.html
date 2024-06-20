@@ -11,8 +11,22 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f2;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #f0f0f2, #e0e0e2);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
         }
         .dropdown-container {
             display: flex;
@@ -21,11 +35,12 @@
             margin-bottom: 20px;
         }
         select, button {
-            padding: 10px;
+            padding: 10px 15px;
             font-size: 16px;
             margin: 5px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            background-color: #f9f9f9;
         }
         button {
             background-color: #5cb85c;
@@ -46,28 +61,31 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-        .title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <div class="title">选择专业</div>
-    <div class="dropdown-container">
-        <select id="courseSelect">
-            <option value="">--请选择专业--</option>
-            <option value="帮我写十份与之前不同的学生机电技术应用专业所掌握的专业技能与职业素养自述与个性评价。">机电技术应用</option>
-            <option value="帮我写十份与之前不同的学生3D打印技术专业所掌握的专业技能与职业素养自述与个性评价。">增材</option>
-            <option value="帮我写十份与之前不同的学生园艺技术专业所掌握的专业技能与职业素养自述与个性评价。">园艺技术</option>
-            <option value="帮我写十份与之前不同的学生康养休闲旅游专业所掌握的专业技能与职业素养自述与个性评价。">康养休闲旅游</option>
-            <option value="帮我写十份与之前不同的学生网络信息安全专业所掌握的专业技能与职业素养自述与个性评价。">网络安全</option>
-            <option value="帮我写十份与之前不同的学生数字影像技术专业所掌握的专业技能与职业素养自述与个性评价。">数字影像技术</option>
-        </select>
-        <button id="fetchButton">获取内容</button>
+    <div class="container">
+        <div class="title">选择专业</div>
+        <div class="dropdown-container">
+            <select id="courseSelect">
+                <option value="">--请选择专业--</option>
+                <option value="帮我写十份与之前不同的学生机电技术应用专业所掌握的专业技能与职业素养自述与个性评价。">机电技术应用</option>
+                <option value="帮我写十份与之前不同的学生3D打印技术专业所掌握的专业技能与职业素养自述与个性评价。">增材</option>
+                <option value="帮我写十份与之前不同的学生园艺技术专业所掌握的专业技能与职业素养自述与个性评价。">园艺技术</option>
+                <option value="帮我写十份与之前不同的学生康养休闲旅游专业所掌握的专业技能与职业素养自述与个性评价。">康养休闲旅游</option>
+                <option value="帮我写十份与之前不同的学生网络信息安全专业所掌握的专业技能与职业素养自述与个性评价。">网络安全</option>
+                <option value="帮我写十份与之前不同的学生数字影像技术专业所掌握的专业技能与职业素养自述与个性评价。">数字影像技术</option>
+            </select>
+            <button id="fetchButton">获取内容</button>
+        </div>
+        <textarea id="contentTextarea" readonly placeholder="内容将显示在这里,请稍等片刻，大约需等待10~20秒..."></textarea>
+        <div class="footer">powered by AI</div>
     </div>
-    <textarea id="contentTextarea" readonly placeholder="内容将显示在这里,请稍等片刻，大约需等待10~20秒..."></textarea>
 
     <script>
         document.getElementById('fetchButton').addEventListener('click', function() {
