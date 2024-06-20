@@ -21,7 +21,7 @@
 
 下面提供两个下载链接
 
-[内置浏览器安卓版1](http://xuanbai.tb66.fun/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
+[内置浏览器安卓版1](http://xuanbai.tb66.fun/cqjypg/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
 
 [内置浏览器安卓版2](https://xuan8ai.github.io/cqjypg/nz/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
 
