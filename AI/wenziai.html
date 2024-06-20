@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>专业技术学习情况</title>
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         body {
             display: flex;
@@ -14,31 +16,20 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f2;
         }
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
         .dropdown-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
         }
-        select, button {
-            padding: 10px;
-            font-size: 16px;
-            margin: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background-color: #5cb85c;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #4cae4c;
+        .form-control, .btn {
+            border-radius: 0.25rem;
         }
         textarea {
-            width: 100%;
-            max-width: 600px;
-            height: 200px;
+            width: 600px; /* 设置文本区域的宽度 */
+            height: 400px; /* 设置文本区域的高度 */
             padding: 10px;
             margin-top: 20px;
             font-size: 16px;
@@ -46,29 +37,34 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-        .title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
     </style>
 </head>
 <body>
-    <div class="title">选择专业</div>
-    <div class="dropdown-container">
-        <select id="courseSelect">
-            <option value="">--请选择专业--</option>
-            <option value="帮我写十份与之前不同的以老师视角的学生机电技术应用专业技术学习情况表现，例如:学生A在课堂上展现出对网络安全基础知识的深刻理解，能够清晰地解释网络协议、加密技术和安全漏洞。">机电技术应用</option>
-            <option value="帮我写十份与之前不同的以老师视角的学生3D打印专业技术学习情况表现，例如:学生A在课堂上展现出对网络安全基础知识的深刻理解，能够清晰地解释网络协议、加密技术和安全漏洞。">增材</option>
-            <option value="帮我写十份与之前不同的以老师视角的学生园艺技术专业技术学习情况表现，例如:学生A在课堂上展现出对网络安全基础知识的深刻理解，能够清晰地解释网络协议、加密技术和安全漏洞。">园艺技术</option>
-            <option value="帮我写十份与之前不同的以老师视角的学生康养休闲旅游专业技术学习情况表现，例如:学生A在课堂上展现出对网络安全基础知识的深刻理解，能够清晰地解释网络协议、加密技术和安全漏洞。">康养休闲旅游</option>
-            <option value="帮我写十份与之前不同的以老师视角的学生网络安全专业技术学习情况表现，例如:学生A在课堂上展现出对网络安全基础知识的深刻理解，能够清晰地解释网络协议、加密技术和安全漏洞。">网络安全</option>
-            <option value="帮我写十份与之前不同的以老师视角的学生数字影像专业技术学习情况表现，例如:学生A在课堂上展现出对网络安全基础知识的深刻理解，能够清晰地解释网络协议、加密技术和安全漏洞。">数字影像技术</option>
-        </select>
-        <button id="fetchButton">获取内容</button>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="title text-center">选择专业</div>
+                <div class="dropdown-container">
+                    <select id="courseSelect" class="form-control">
+                        <option value="">--请选择专业--</option>
+                        <option value="机电技术应用">机电技术应用</option>
+                        <option value="增材">增材</option>
+                        <option value="园艺技术">园艺技术</option>
+                        <option value="康养休闲旅游">康养休闲旅游</option>
+                        <option value="网络安全">网络安全</option>
+                        <option value="数字影像技术">数字影像技术</option>
+                    </select>
+                    <button id="fetchButton" class="btn btn-success mt-2">获取内容</button>
+                </div>
+                <textarea id="contentTextarea" class="form-control" readonly placeholder="内容将显示在这里,请稍等片刻，大约需等待10~20秒..."></textarea>
+            </div>
+        </div>
     </div>
-    <textarea id="contentTextarea" readonly placeholder="内容将显示在这里,请稍等片刻，大约需等待10~20秒..."></textarea>
 
+    <!-- 引入Bootstrap JS 和依赖的 Popper.js 和 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script>
         document.getElementById('fetchButton').addEventListener('click', function() {
             var selectedCourse = document.getElementById('courseSelect').value;
