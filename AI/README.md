@@ -14,7 +14,7 @@
 
 贡献者  | 昵称  | 贡献内容
  ---- | ----- | ------  
-<img src="https://avatars.githubusercontent.com/u/173129827?s=96&v=4" />| xuan8ai | 提供了AI搜索接口，整体框架
+<img src="https://avatars.githubusercontent.com/u/173129827?s=96&v=4" />| xuan8ai | 提供了AI搜索接口，整体框架，完善搜索命令，完善输出内容格式
 <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=196942062" />| 空 | 参与了iPhone可用性测试
 
 欢迎关注"隼目安全"微信公众号
