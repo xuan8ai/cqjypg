@@ -27,6 +27,6 @@
 
 贡献者  | 昵称  | 贡献内容
  ---- | ----- | ------  
-<img src="https://avatars.githubusercontent.com/u/173129827?s=96&v=4" />| xuan8ai | 内置浏览器框架、验证了浏览器自动化不可行等
+<img src="https://avatars.githubusercontent.com/u/173129827?s=96&v=4" />| xuan8ai | 提供域名、提供云服务器、苹果内置浏览器框架、安卓内置浏览器框架、验证了浏览器自动化不可行等
 <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2137089783" />| 双面 | 验证了浏览器自动化不可行、验证了平台源码接口有验证程序
 <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2435863198" />| 廖聪 | 吉祥物
