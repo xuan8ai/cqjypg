@@ -1,36 +1,134 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>重庆中职生综合素质评价内置浏览器版</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Domain Iframe with Announcement Modal</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            max-width: 960px;
+            padding: 1rem;
+            margin: auto;
+        }
+        .browser {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        .browser iframe {
+            width: 100%;
+            height: 500px; /* 可以根据需要调整高度 */
+            border: none;
+        }
+        .horizontal-scroll-announcement {
+            white-space: nowrap;
+            overflow: auto;
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .copyright {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #confirmButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body onload="loadAndShowAnnouncement()">
+<body>
     <div class="container">
-        <div id="horizontal-scroll-announcement" class="horizontal-scroll-announcement"></div>
-        <div class="browser">
-            <iframe src="http://zz.cqjypg.com" frameborder="0"></iframe>
+        <!-- 公告横幅 -->
+        <div id="horizontal-scroll-announcement" class="horizontal-scroll-announcement">
+            这里是公告内容，可以放置你的公告信息。
         </div>
-        <div class="copyright">© 2024-2026 隼目安全 版权所有</div>
-        <!-- 弹窗公告栏 -->
-        <div id="myModal" class="modal" onclick="closeModal(event)">
-            <div class="modal-content" onclick="event.stopPropagation()">
+        <!-- 内置浏览器 -->
+        <div class="browser">
+            <iframe src="http://example.com" frameborder="0"></iframe> <!-- 替换成你的跨域URL -->
+        </div>
+        <!-- 版权信息 -->
+        <div class="copyright">&copy; 2023 Your Company</div>
+        <!-- 公告模态框 -->
+        <div id="myModal" class="modal" onclick="closeModal()">
+            <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <p id="modalAnnouncement"></p>
-                <button id="confirmButton" onclick="closeModal()">知道了</button>
+                <p id="modalAnnouncement">这里是模态框中的公告内容。</p>
+                <button id="confirmButton" onclick="confirmAction()">确认</button>
             </div>
         </div>
     </div>
-<!-- 引用外部JavaScript文件 -->
-    <script src="touch-events.js"></script>
-        <script>
-        // 模拟读取公告内容
-        const announcementContent = `
-            本平台为内置浏览器，如有问题请联系:xuan8ai666@gmail.com
-        `;
-        const announcement = document.getElementById('horizontal-scroll-announcement');
-        announcement.innerHTML = announcementContent.split('\n').map((line, index) => `<span>${line}</span>`).join('');
+
+    <script>
+        // 显示模态框的函数
+        function showModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        // 关闭模态框的函数
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        // 用户点击确认按钮后的操作
+        function confirmAction() {
+            alert('您已经确认了公告信息。');
+            closeModal();
+        }
+
+        // 页面加载完毕后立即显示模态框
+        window.onload = showModal;
     </script>
-    <script src="scripts.js"></script>
 </body>
 </html>
