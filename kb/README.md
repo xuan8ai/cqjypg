@@ -2,7 +2,7 @@
 
 课程表在线免登录查询
 
-[课程表在线免登录查询 安卓链接](https://xuan8ai.github.io/cqjypg/kb/)
+[课程表在线免登录查询 安卓链接](https://xuan8ai.github.io/cqjypg/kb/index.php)
 
 加入我们或有问题请联系:xuan8ai@gmail.com
 
