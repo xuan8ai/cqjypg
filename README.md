@@ -35,7 +35,6 @@
 <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2137089783" />| 双面 | 验证了浏览器自动化不可行、验证了平台源码接口有验证程序
 <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2435863198" />| 廖聪 | 吉祥物
 <img src="https://avatars.githubusercontent.com/u/134758010?v=4" />| phoenixSdz | 更新优化代码
-<img src="https://q.qlogo.cn/g?b=qq&s=100&nk=3421554245" />| 付淼 | 吉祥物二号
 
 欢迎关注"隼目安全"微信公众号
 -----
