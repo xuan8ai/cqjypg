@@ -19,7 +19,7 @@
 
 [安卓内置浏览器网页版](https://xuan8ai.github.io/cqjypg/nz/)
 
-[苹果内置浏览器网页版](http://iecf2e82.xy.procc.top/cqjypg/)
+[苹果内置浏览器网页版](http://iecf2e82.xy.procc.top/cqjypg/index.html)
 
 [安卓内置浏览器网页版-教师版](https://xuan8ai.github.io/cqjypg/nz/js.html)
 
