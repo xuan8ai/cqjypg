@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>重庆中职生综合素质评价内置浏览器版</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .horizontal-scroll-announcement {
+            white-space: nowrap;
+            overflow: hidden;
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5rem;
+            font-size: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2; 
+        }
+        .horizontal-scroll-announcement span {
+            display: inline-block;
+            padding-right: 100%;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            width: 100%;
+            margin-top: 2rem; 
+        }
+        .browser {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .browser iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+        }
+        .copyright {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+            text-align: center;
+            border-radius: 10px;
+            animation: slideIn 0.5s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .close:hover,
+        .close:focus {
+            color: #f00;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #confirmButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #confirmButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body onload="loadAndShowAnnouncement()">
+    <div class="horizontal-scroll-announcement">
+        <span>有问题请联系QQ:2594709540</span>
+    </div>
+    <div class="container">
+        <div class="browser">
+            <iframe src="http://zz.cqjypg.com/#/headmasterPage/headmasterIndex"></iframe>
+        </div>
+        <div class="copyright">© 2024-2026 隼目安全 版权所有</div>
+    </div>
+    <!-- 弹窗公告栏 -->
+    <div id="myModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalAnnouncement"></p>
+            <button id="confirmButton" onclick="closeModal()">知道了</button>
+        </div>
+    </div>
+    <script>
+        function loadAndShowAnnouncement() {
+            fetch('https://xuan8ai.github.io/cqjypg/nz/gonggao.txt') 
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    if (data.trim() !== '') { 
+                        document.getElementById('modalAnnouncement').innerText = data;
+                        document.getElementById('myModal').style.display = 'block';
+                    } else {
+                        console.log('Announcement is empty.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading announcement:', error);
+
+                });
+        }
+
+        function closeModal(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            document.getElementById('myModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
