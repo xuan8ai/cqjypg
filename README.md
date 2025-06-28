@@ -1,57 +1,94 @@
-![Image text](https://count.getloli.com/@xiaotao?name=xiaotao&theme=moebooru-h&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto)
+<div align="center">
 
-# 项目名称:重庆中职生综合素质评价管理系统内置浏览器版
-### 原项目名称:重庆中职生综合素质评价管理系统手机适应版
+![Visitor Count](https://count.getloli.com/@xiaotao?name=xiaotao&theme=moebooru-h&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto)
 
+# 重庆中职生综合素质评价管理系统 · 内置浏览器版
+### （原项目名称：重庆中职生综合素质评价管理系统手机适应版）
 
-项目初衷:<del>由于教委没有一点技术含量，不知道请了个什么四五流外包公司，平台优化是没有的，自适应是缺失的，APP短信验证码服务费是给不起的，功能是没人维护的，源码是可以一键爬下来的，防护是低级的，URL是必须校验的，二开是害怕的</del>
+</div>
 
-(σ;*Д*)σ死刑！
+---
 
-<del>附加，服务器是拉胯的</del>
+## 📌 项目背景
 
-(注:经过长时间观察，貌似晚上会自动关闭服务器，因此上午10:00至下午20:00网络应该是最稳定的)
+<details>
+<summary><b>点击查看项目初衷</b></summary>
 
-项目初阶段，本准备利用Python的浏览器自动化制作适应手机UI的界面，因功能性问题失败
+由于教委平台存在诸多技术问题：
+- 平台优化缺失
+- 无移动端自适应
+- APP短信验证码服务不稳定
+- 功能维护不足
+- 安全防护薄弱
 
-项目第二阶段，准备制作一个在本地对平台CSS内容进行持续性修改以达到自适应效果，本地修改与测试成功，导入脚本后因环境问题失败
+<span style="color: red;">(σ;*Д*)σ死刑！</span>
 
-项目第三阶段，准备利用油猴等浏览器插件对网站进行css修改，因浏览器私密性失败
+附加说明：服务器性能不稳定，经观察晚上会自动关闭服务器（建议在上午10:00至下午20:00访问）
+</details>
 
-项目第四阶段，因无法正规获取平台API接口(虽然已经爬下来了)，因合法问题搁置，迫于无奈，我们只能制作一个模拟PC端访问该平台页面的普通内置浏览器，效果一般。(用户自己任意浏览器的电脑UA功能也可以实现)，这里由于《网络安全法》、《中华人民共和国计算机信息系统保护法》，只能宣布该项目停止，我们依旧上传了我们的内置浏览器网页，如果想要可以直接点击下方链接跳转。
+---
 
-[安卓内置浏览器网页版](https://xuan8ai.github.io/cqjypg/nz/)
+## 🚀 项目开发历程
 
-[苹果内置浏览器网页版](http://c82e67f7.xy.proaa.top/cqjypg/index.html)
+| 阶段 | 方案 | 结果 |
+|------|------|------|
+| 第一阶段 | 使用Python浏览器自动化适配手机UI | ❌ 功能性问题失败 |
+| 第二阶段 | 本地CSS持续修改实现自适应 | ❌ 环境问题失败 |
+| 第三阶段 | 油猴脚本修改网站CSS | ❌ 浏览器私密性限制 |
+| 第四阶段 | 模拟PC端访问的内置浏览器 | ⚠️ 效果一般 |
 
-[安卓内置浏览器网页版-教师版](https://xuan8ai.github.io/cqjypg/nz/js.html)
+> 由于《网络安全法》等法规限制，项目最终停止开发，但仍提供现有解决方案。
 
-这里还是不建议同学们使用 C证 APP，该APP存在信息泄露隐患，且在一键登录与获取验证码、注册、登录等多处存在致命Bug，能使用网页端就使用网页端，如果觉得记不住网址，我们将我们的内置浏览器打包成了安卓安装包，可点击下方链接下载，苹果用户建议收藏该网页，由于苹果应用签名有效时间很短，过程过于繁琐，本人没有太多精力去维护，网页端将就一下吧_(:з」∠)_别急
+---
 
-下面提供两个下载链接
+## 🌐 在线访问
 
-[内置浏览器安卓版1](http://c82e67f7.xy.proaa.top/cqjypg/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
+| 版本 | 链接 |
+|------|------|
+| 安卓学生版 | [点击访问](https://xuan8ai.github.io/cqjypg/nz/) |
+| 苹果学生版 | [点击访问](http://c82e67f7.xy.proaa.top/cqjypg/index.html) |
+| 安卓教师版 | [点击访问](https://xuan8ai.github.io/cqjypg/nz/js.html) |
 
-[内置浏览器安卓版2](https://xuan8ai.github.io/cqjypg/nz/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
+⚠️ **安全提示**：不建议使用官方C证APP，存在信息泄露风险和多处致命Bug。
 
-## 推广
+---
 
-加入我们或有问题请联系邮箱：xuan8ai@h-acker.cc
+## 📥 客户端下载
 
-官方论坛：https://www.cn-fnst.top/
+| 版本 | 下载链接 |
+|------|----------|
+| 安卓版1 | [下载APK](http://c82e67f7.xy.proaa.top/cqjypg/重庆中职生综合素质评价内置浏览器版_0.0.1.apk) |
+| 安卓版2 | [备用下载](https://xuan8ai.github.io/cqjypg/nz/重庆中职生综合素质评价内置浏览器版_0.0.1.apk) |
 
-公众号：隼目安全
+> 苹果用户建议收藏网页版，因签名有效期问题无法长期维护客户端。
 
-## 贡献者
+---
 
-贡献者  | 昵称  | 贡献内容
- ---- | ----- | ------  
-<img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2594709540" />| 轩白 | 提供域名、提供云服务器、苹果内置浏览器框架、安卓内置浏览器框架、验证了浏览器自动化不可行等
-<img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2137089783" />| 双面 | 验证了浏览器自动化不可行、验证了平台源码接口有验证程序
-<img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2435863198" />| 廖聪 | 吉祥物
-<img src="https://avatars.githubusercontent.com/u/134758010?v=4" />| phoenixSdz | 更新优化代码
+## 🤝 联系我们
 
+📧 邮箱：xuan8ai@h-acker.cc  
+🌐 官方论坛：[cn-fnst.top](https://www.cn-fnst.top/)  
+📱 公众号：隼目安全
 
-## 小宝贝
+---
 
-![小宝贝](https://www.cn-fnst.top/wp-content/uploads/2025/06/c43261515720250628234131.jpg)
+## 👥 贡献者
+
+<div align="center">
+
+| 头像 | 昵称 | 贡献内容 |
+|------|------|----------|
+| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2594709540" width="50"> | 轩白 | 提供域名、服务器、浏览器框架开发 |
+| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2137089783" width="50"> | 双面 | 技术验证、接口分析 |
+| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2435863198" width="50"> | 廖聪 | 项目吉祥物 |
+| <img src="https://avatars.githubusercontent.com/u/134758010?v=4" width="50"> | phoenixSdz | 代码优化 |
+
+</div>
+
+---
+
+## 🐱 项目吉祥物
+
+<div align="center">
+<img src="https://www.cn-fnst.top/wp-content/uploads/2025/06/c43261515720250628234131.jpg" width="300" alt="小宝贝">
+</div>
