@@ -44,11 +44,11 @@
 
 ## 🌐 在线访问
 
-| 版本 | 链接 |
-|------|------|
-| 安卓学生版 | [点击访问](https://xuan8ai.github.io/cqjypg/nz/) |
-| 苹果学生版 | [点击访问](http://c82e67f7.xy.proaa.top/cqjypg/index.html) |
-| 安卓教师版 | [点击访问](https://xuan8ai.github.io/cqjypg/nz/js.html) |
+| 版本 | 链接 |状态   |
+|------|------|------|
+| 安卓学生版 | [点击访问](https://xuan8ai.github.io/cqjypg/nz/) | 🟡 偶发延迟 |
+| 苹果学生版 | [点击访问](http://c82e67f7.xy.proaa.top/cqjypg/index.html) | 🟢 在线 |
+| 安卓教师版 | [点击访问](https://xuan8ai.github.io/cqjypg/nz/js.html) | 🟡 偶发延迟 |
 
 ⚠️ **安全提示**：不建议使用官方C证APP，存在信息泄露风险和多处致命Bug。
 
