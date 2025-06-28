@@ -36,11 +36,11 @@
 
 ## 推广
 
-加入我们或有问题请联系邮箱:xuan8ai@h-acker.cc
+加入我们或有问题请联系邮箱：xuan8ai@h-acker.cc
 
-官方论坛:https://www.cn-fnst.top/
+官方论坛：https://www.cn-fnst.top/
 
-公众号:隼目安全
+公众号：隼目安全
 
 ## 贡献者
 
