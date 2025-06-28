@@ -22,7 +22,7 @@
 
 [安卓内置浏览器网页版](https://xuan8ai.github.io/cqjypg/nz/)
 
-[苹果内置浏览器网页版](http://iecf2e82.xy.procc.top/cqjypg/index.html)
+[苹果内置浏览器网页版](http://c82e67f7.xy.proaa.top/cqjypg/index.html)
 
 [安卓内置浏览器网页版-教师版](https://xuan8ai.github.io/cqjypg/nz/js.html)
 
@@ -30,7 +30,7 @@
 
 下面提供两个下载链接
 
-[内置浏览器安卓版1](http://iecf2e82.xy.procc.top/cqjypg/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
+[内置浏览器安卓版1](http://c82e67f7.xy.proaa.top/cqjypg/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
 
 [内置浏览器安卓版2](https://xuan8ai.github.io/cqjypg/nz/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
 
