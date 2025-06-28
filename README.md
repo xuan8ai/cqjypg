@@ -51,4 +51,4 @@
 
 ## 小宝贝
 
-<img src="https://www.cn-fnst.top/wp-content/uploads/2025/06/c43261515720250628234131.jpg" alt="小宝贝">
+![小宝贝](https://www.cn-fnst.top/wp-content/uploads/2025/06/c43261515720250628234131.jpg)
