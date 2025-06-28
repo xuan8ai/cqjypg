@@ -72,16 +72,12 @@
 
 ## 👥 贡献者
 
-<div align="center">
-
 | 头像 | 昵称 | 贡献内容 |
 |------|------|----------|
 | <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2594709540" width="50"> | 轩白 | 提供域名、服务器、浏览器框架开发 |
 | <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2137089783" width="50"> | 双面 | 技术验证、接口分析 |
 | <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2435863198" width="50"> | 廖聪 | 项目吉祥物 |
 | <img src="https://avatars.githubusercontent.com/u/134758010?v=4" width="50"> | phoenixSdz | 代码优化 |
-
-</div>
 
 ---
 
