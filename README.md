@@ -1,11 +1,11 @@
 <div align="center">
 <img src="https://count.getloli.com/@xiaotao?name=xiaotao&theme=moebooru-h&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto">
 
+<div align="center">
 # 重庆中职生综合素质评价管理系统 · 内置浏览器版
 ### （原项目名称：重庆中职生综合素质评价管理系统手机适应版）
 
 </div>
-
 ---
 
 ## 📌 项目背景
