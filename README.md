@@ -36,6 +36,8 @@
 
 加入我们或有问题请联系邮箱:xuan8ai@h-acker.cc
 
+官方论坛:https://www.cn-fnst.top/
+
 ## 贡献者
 
 贡献者  | 昵称  | 贡献内容
