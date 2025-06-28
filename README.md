@@ -75,10 +75,10 @@
 
 | 头像 | 昵称 | 贡献内容 |
 |------|------|----------|
-| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2594709540" width="50"> | <div align="center">轩白</div> | 提供域名、服务器、浏览器框架开发 |
-| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2137089783" width="50"> | 双面 | 技术验证、接口分析 |
-| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2435863198" width="50"> | 廖聪 | 项目吉祥物 |
-| <img src="https://avatars.githubusercontent.com/u/134758010?v=4" width="50"> | phoenixSdz | 代码优化 |
+| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2594709540" width="50"> | <div align="center">轩白</div> | <div align="center">提供域名、服务器、浏览器框架开发</div> |
+| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2137089783" width="50"> | <div align="center">双面</div> | <div align="center">技术验证、接口分析</div> |
+| <img src="https://q.qlogo.cn/g?b=qq&s=100&nk=2435863198" width="50"> | <div align="center">廖聪</div> | <div align="center">项目吉祥物</div> |
+| <img src="https://avatars.githubusercontent.com/u/134758010?v=4" width="50"> | <div align="center">phoenixSdz</div> | <div align="center">代码优化</div> |
 
 ---
 
