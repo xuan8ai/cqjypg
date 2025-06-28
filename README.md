@@ -34,9 +34,13 @@
 
 [内置浏览器安卓版2](https://xuan8ai.github.io/cqjypg/nz/重庆中职生综合素质评价内置浏览器版_0.0.1.apk)
 
+## 推广
+
 加入我们或有问题请联系邮箱:xuan8ai@h-acker.cc
 
 官方论坛:https://www.cn-fnst.top/
+
+公众号:隼目安全
 
 ## 贡献者
 
